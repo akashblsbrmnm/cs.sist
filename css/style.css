@@ -48,32 +48,98 @@ a{
     background-size: cover;
     color:aliceblue;
 }
-.header button{
-    
-    padding:10px;
-    border:4px;
-  background: none;
-  text-align: center;
-  font-size: 1.375rem;
-  color:white;
-  border:2px solid white;
-  margin-left: 6.25rem;
-  margin-top: 1.5rem;
-}
-
-.header button:hover {
-    background: rgb(219, 188, 13);
-    border:2px solid rgb(128,0,0);
-    transition: 0.6s;
-}
-.header button:hover a{
-    color:rgb(63, 4, 4);
-    font-weight: 800;
-}
+button {
+    margin-left: 6.25rem;
+    position: relative;
+    top:30px;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 7px;
+   }
+   
+   button.learn-more {
+    width: 12rem;
+    height: auto;
+   }
+   
+   button.learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #ffffff;
+    border-radius: 0.35rem;
+   }
+   
+   button.learn-more .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #800000;
+   }
+   
+   button.learn-more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+   }
+   
+   button.learn-more .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #800000;
+    border-right: 0.125rem solid #800000;
+    transform: rotate(45deg);
+   }
+   
+   button.learn-more .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1.2rem 0;
+    margin: 0 0 0 3rem;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase ;
+   }
+   
+   button:hover .circle {
+    width: 100%;
+   }
+   
+   button:hover .circle .icon.arrow {
+    background: #800000;
+    transform: translate(1rem, 0);
+   }
+   
+   button:hover .button-text {
+    color: #800000;;
+   }
 .dacs h1{
     text-align: left;
     color:white;
     margin-left: 6.25rem;
+    position: relative;
+    top:30px;
     font-weight: 350;
     font-size: 3rem;
 }
@@ -81,7 +147,9 @@ a{
     text-align: left;
     margin-left: 6.25rem;
     font-weight: 550;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
+    position: relative;
+    top:30px;  
     margin-bottom: 0.35rem;
 }
 .logo img{
@@ -109,9 +177,10 @@ a{
     font-weight:200;
     padding:10px;
     color:rgb(49, 49, 49);
-    margin-bottom: 100px;;
+    margin-bottom: 100px;
     font-size: 1.25rem;
 }
+
 .content h2{
     font-weight:350;
     color:rgb(128,0,0);
@@ -219,8 +288,8 @@ a{
     height:400px;
     float: right;
     background-color: rgb(128,0,0);
-    margin-left: 500px;
-    padding: 35px;
+
+    padding: 35px 15px 35px 15px;
     box-shadow: 10px 10px 50px rgba(0,0,0,.5);
 }
 
@@ -229,26 +298,10 @@ a{
     font-size: 3.75rem;
     width: 22ch;
     color:rgb(219, 188, 13);
-    animation: typing 10s steps(22), blink .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 6px solid;
-  }
-
-  @keyframes typing {
-    from {
-      width: 0
-    }
-  }
-      
-  @keyframes blink {
-    10% {
-      border-color: transparent
-    }
-  }
-
+}
 .text{
-    padding: 10px;
     font-size: 1.1875rem;
     color: white;
     line-height: 30px;
@@ -272,7 +325,14 @@ a{
     }
     .inner-container{
         width: 100%;
-        
+        height: 800px;
+        padding: 35px 0px 35px 0px; 
+    }
+    .inner-container h1{
+        font-size: 2.5rem;
+    }
+    .inner-container p{
+        font-size: 1.2rem;
     }
     .header{
         height:75vh;
@@ -287,19 +347,39 @@ a{
         padding: 0;
     }
     .inner-container{
-        padding: 60px;
+        width: 100%;
+        border-radius: 15px;
+
+        height: 450px;
+        padding: 25px 10px 25px 10px; 
+    }
+    .inner-container h1{
+        font-size: 2.3rem;
+    }
+    .inner-container p{
+        font-size: 1rem;
     }
     .header{
-        height: 75vh;
+        height: 450px;
     }
     .dacs h2{
         margin-left: 1.95rem;
+        position: relative;
+        top:-25px;
     }
     .dacs h1{
         margin-left: 1.95rem;
+        position: relative;
+        top:-25px;
+    }
+    .certifications img {
+        margin:50px auto;
+        width: 350px;
     }
     .header button{
       margin-left: 1.95rem;
+      position: relative;
+        top:-25px;
     }
 }
 /* FOOTER */
@@ -484,6 +564,12 @@ background: linear-gradient(307deg, rgba(180,1,1,1) 0%, rgba(128,0,0,1) 0%, rgba
     text-align:center;
     font-family: 'Inter';
     font-size: 1rem;
+}
+.bottom-footer p{
+    color: black;
+}
+.bottom-footer a{
+    color: black;
 }
 .setup iframe{
     margin-left: 2.5rem;
