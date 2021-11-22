@@ -539,6 +539,45 @@
     {
         margin-left: 0;
     }
+    
+    .about-section{
+        padding: 0;
+    }
+    .inner-container{
+        width: 100%;
+        border-radius: 15px;
+
+        height: 450px;
+        padding: 25px 10px 25px 10px; 
+    }
+    .inner-container h1{
+        font-size: 2.3rem;
+    }
+    .inner-container p{
+        font-size: 1rem;
+    }
+    .header{
+        height: 450px;
+    }
+    .dacs h2{
+        margin-left: 1.95rem;
+        position: relative;
+        top:-25px;
+    }
+    .dacs h1{
+        margin-left: 1.95rem;
+        position: relative;
+        top:-25px;
+    }
+    .certifications img {
+        margin:50px auto;
+        width: 350px;
+    }
+    .header button{
+    margin-left: 1.95rem;
+    position: relative;
+        top:-25px;
+    }
     }
     .gmaps h2{
         font-family: 'Inter', sans-serif;
@@ -574,3 +613,4 @@
     .setup iframe{
         margin-left: 2.5rem;
     }
+    
